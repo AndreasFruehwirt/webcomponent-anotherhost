@@ -11,6 +11,7 @@ export class HostLocationService {
   public handleNavigation() {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationStart) {
+        console.log(val);
         console.log('do some magic');
         if (val.id === 1 && val.navigationTrigger === 'imperative' || val.navigationTrigger === 'popstate') {
 
