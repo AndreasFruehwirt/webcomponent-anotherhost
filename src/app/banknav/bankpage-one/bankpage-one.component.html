@@ -1,0 +1,5 @@
+<ng-template #loading>Loading</ng-template>
+<ng-template #error>Error happend. Maybe not started?</ng-template>
+<p>bankpage-one works!</p>
+<ce-dashboard *axLazyElement="dashboardUrl; loadingTemplate:loading; errorTemplate: error">
+</ce-dashboard>
