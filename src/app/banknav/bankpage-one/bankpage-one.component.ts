@@ -8,10 +8,17 @@ import {environment} from "../../../environments/environment";
 })
 export class BankpageOneComponent implements OnInit {
 
-  dashboardUrl = environment.MFE_PAYMENT_URL + '/main-es2015.js'  + "?ts=" + new Date().getTime();
-  constructor() { }
+  //dashboardUrl = environment.MFE_PAYMENT_URL + '/main-es2015.js'  + "?ts=" + new Date().getTime();
+  dashboardUrl =  'http://localhost:4201/main.js'  + "?ts=" + new Date().getTime();
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+    let script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'http://localhost:4201/main.js.map'  + "?ts=" + new Date().getTime();
   }
 
 }

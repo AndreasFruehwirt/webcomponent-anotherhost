@@ -23,6 +23,7 @@ export class HostLocationService {
 
           // Navigate to host route and replace location history with fullRouteUrl
           this.router.navigateByUrl(routeWithoutOutlet).then(() => {
+            console.log(routeWithoutOutlet);
             window.history.pushState({}, null, fullRouteUrl);
           });
         }
