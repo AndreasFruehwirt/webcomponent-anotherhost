@@ -8,7 +8,8 @@ import {BankpageThreeComponent} from "./banknav/bankpage-three/bankpage-three.co
 const routes: Routes = [
   {path: 'banknav-one', component: BankpageOneComponent},
   {path: 'banknav-two', component: BankpageTwoComponent},
-  {path: 'banknav-three', component: BankpageThreeComponent}
+  {path: 'banknav-three', component: BankpageThreeComponent},
+  { path: '', redirectTo: '/banknav-one', pathMatch: 'full' }
 ];
 
 @NgModule({
