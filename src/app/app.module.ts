@@ -15,6 +15,8 @@ import { BankpageOneComponent } from './banknav/bankpage-one/bankpage-one.compon
 import { BankpageTwoComponent } from './banknav/bankpage-two/bankpage-two.component';
 import { BankpageThreeComponent } from './banknav/bankpage-three/bankpage-three.component';
 import {LazyElementsModule} from "@angular-extensions/elements";
+import {BehaviorSubject} from "rxjs";
+import { PageLoaderComponent } from './page-loader/page-loader.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {LazyElementsModule} from "@angular-extensions/elements";
     BanknavComponent,
     BankpageOneComponent,
     BankpageTwoComponent,
-    BankpageThreeComponent
+    BankpageThreeComponent,
+    PageLoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -43,5 +46,9 @@ import {LazyElementsModule} from "@angular-extensions/elements";
 export class AppModule {
   constructor(private ngZone: NgZone) {
     (window as any).ngZone = this.ngZone; // store ngZone reference on the window object
+    (window as any).pageEventHandler = new BehaviorSubject(null);
+    (window as any).pageBodyEventHandler = new BehaviorSubject(null);
+    (window as any).productEventHandler = new BehaviorSubject(null);
+
   }
 }
