@@ -1,0 +1,28 @@
+{
+  "name": "my-lib",
+  "version": "0.0.1",
+  "schematics": "./schematics/my-lib/src/collection.json",
+  "scripts": {
+    "build": "tsc -p ./schematics/my-lib/tsconfig.json",
+    "copy:schemas": "cpr ./schematics/my-lib/src/*/schema.json ../../dist/my-lib/",
+    "copy:files": "cpr ./schematics/my-lib/**/files/** ../../dist/my-lib/",
+    "copy:collection": "cpr ./schematics/my-lib/*/collection.json ../../dist/my-lib/schematics/collection.json",
+    "postbuild": "npm run copy:schemas && npm run copy:files && npm run copy:collection"
+  },
+  "peerDependencies": {
+    "@angular/common": "^9.1.11",
+    "@angular/core": "^9.1.11"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0",
+    "typescript": "~3.8.2",
+    "@angular-devkit/core": "^9.1.9",
+    "@angular-devkit/schematics": "^9.1.9"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.1",
+    "@types/jasmine": "~3.5.0",
+    "jasmine": "^3.5.0",
+    "cpr": "^3.0.1"
+  }
+}
