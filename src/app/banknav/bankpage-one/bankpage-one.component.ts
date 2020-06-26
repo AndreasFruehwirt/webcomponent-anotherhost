@@ -16,9 +16,7 @@ export class BankpageOneComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'http://localhost:4201/main.js.map'  + "?ts=" + new Date().getTime();
+
   }
 
 }

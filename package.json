@@ -4,10 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:kontopage": "ng serve kontoPage --watch --eval-source-map --plugin ~projects/kontoPage/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoPage/webpack.externals.js  --port=4202",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall:bak": "",
+    "postinstall": "ngcc",
+    "build:kontoPage:externals": "ng build --extra-webpack-config projects/kontoPage/webpack.externals.js --prod --project kontoPage --single-bundle"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +28,7 @@
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
     "document-register-element": "^1.7.2",
+    "ngx-build-plus": "^9.0.6",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

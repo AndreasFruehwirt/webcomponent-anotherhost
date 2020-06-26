@@ -125,6 +125,136 @@
           }
         }
       }
+    },
+    "kontoPage": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/kontoPage",
+      "sourceRoot": "projects/kontoPage/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/kontoPage",
+            "index": "projects/kontoPage/src/index.html",
+            "main": "projects/kontoPage/src/main.ts",
+            "polyfills": "projects/kontoPage/src/polyfills.ts",
+            "tsConfig": "projects/kontoPage/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/kontoPage/src/favicon.ico",
+              "projects/kontoPage/src/assets"
+            ],
+            "styles": [
+              "projects/kontoPage/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/rxjs/bundles/rxjs.umd.js",
+              "node_modules/@angular/core/bundles/core.umd.js",
+              "node_modules/@angular/common/bundles/common.umd.js",
+              "node_modules/@angular/common/bundles/common-http.umd.js",
+              "node_modules/@angular/compiler/bundles/compiler.umd.js",
+              "node_modules/@angular/elements/bundles/elements.umd.js",
+              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
+              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/kontoPage/src/environments/environment.ts",
+                  "with": "projects/kontoPage/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "kontoPage:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "kontoPage:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "kontoPage:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/kontoPage/src/test.ts",
+            "polyfills": "projects/kontoPage/src/polyfills.ts",
+            "tsConfig": "projects/kontoPage/tsconfig.spec.json",
+            "karmaConfig": "projects/kontoPage/karma.conf.js",
+            "assets": [
+              "projects/kontoPage/src/favicon.ico",
+              "projects/kontoPage/src/assets"
+            ],
+            "styles": [
+              "projects/kontoPage/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kontoPage/tsconfig.app.json",
+              "projects/kontoPage/tsconfig.spec.json",
+              "projects/kontoPage/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/kontoPage/e2e/protractor.conf.js",
+            "devServerTarget": "kontoPage:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "kontoPage:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "banking-app"
