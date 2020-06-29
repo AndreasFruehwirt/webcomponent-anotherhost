@@ -4,4 +4,5 @@ export class PageContext {
   name: string;
   id: number;
   pageEventHandler: BehaviorSubject<any>;
+  pageBodyEventHandler: BehaviorSubject<any>;
 }
