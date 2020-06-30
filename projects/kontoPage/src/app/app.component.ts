@@ -34,7 +34,7 @@ export class AppComponent implements OnInit, OnDestroy {
     } else {
       this.navigate('chemicals');
     }
-    this.pagecontext.pageEventHandler.next({service:'chemicals'});
+    //this.pagecontext.pageEventHandler.next({service:'chemicals'});
 
   }
 
