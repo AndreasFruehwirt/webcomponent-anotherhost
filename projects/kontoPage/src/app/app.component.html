@@ -1,3 +1,9 @@
 <div class="container">
-  <app-table></app-table>
+  <app-card-bar></app-card-bar>
+  <mat-toolbar color="primary" class="mat-elevation-z6">
+    <button mat-button (click)="handleClick('chemicals')" [class.mat-accent]="activeButton === 'chemicals'">Chemicals</button>
+    <button mat-button (click)="handleClick('adress_input')" [class.mat-accent]="activeButton === 'adress_input'">Adress Input</button>
+  </mat-toolbar>
+  <!--<app-table></app-table>-->
+  <app-page-fragment-loader></app-page-fragment-loader>
 </div>

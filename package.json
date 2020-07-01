@@ -5,13 +5,17 @@
     "ng": "ng",
     "start": "ng serve",
     "start:kontopage": "ng serve kontoPage --watch --eval-source-map --plugin ~projects/kontoPage/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoPage/webpack.externals.js  --port=4202",
+    "start:kontodata": "ng serve kontoData --watch --eval-source-map --plugin ~projects/kontoData/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoData/webpack.externals.js  --port=4203",
+    "start:kontoadressform": "ng serve kontoAdressform --watch --eval-source-map --plugin ~projects/kontoAdressform/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoAdressform/webpack.externals.js  --port=4204",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall:bak": "",
+    "postinstall:bak": "ngcc",
     "postinstall": "ngcc",
-    "build:kontoPage:externals": "ng build --extra-webpack-config projects/kontoPage/webpack.externals.js --prod --project kontoPage --single-bundle"
+    "build:kontoPage:externals": "ng build --extra-webpack-config projects/kontoPage/webpack.externals.js --prod --project kontoPage --single-bundle",
+    "build:kontoData:externals": "ng build --extra-webpack-config projects/kontoData/webpack.externals.js --prod --project kontoData --single-bundle",
+    "build:kontoAdressform:externals": "ng build --extra-webpack-config projects/kontoAdressform/webpack.externals.js --prod --project kontoAdressform --single-bundle"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +39,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.9",
+    "@angular-devkit/build-ng-packagr": "~0.901.9",
     "@angular/cli": "~9.1.9",
     "@angular/compiler-cli": "~9.1.11",
     "@types/jasmine": "~3.5.0",
@@ -48,6 +53,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "ng-packagr": "^9.0.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",

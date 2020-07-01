@@ -255,6 +255,308 @@
           }
         }
       }
+    },
+    "kontoData": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/kontoData",
+      "sourceRoot": "projects/kontoData/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/kontoData",
+            "index": "projects/kontoData/src/index.html",
+            "main": "projects/kontoData/src/main.ts",
+            "polyfills": "projects/kontoData/src/polyfills.ts",
+            "tsConfig": "projects/kontoData/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/kontoData/src/favicon.ico",
+              "projects/kontoData/src/assets"
+            ],
+            "styles": [
+              "projects/kontoData/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/rxjs/bundles/rxjs.umd.js",
+              "node_modules/@angular/core/bundles/core.umd.js",
+              "node_modules/@angular/common/bundles/common.umd.js",
+              "node_modules/@angular/common/bundles/common-http.umd.js",
+              "node_modules/@angular/compiler/bundles/compiler.umd.js",
+              "node_modules/@angular/elements/bundles/elements.umd.js",
+              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
+              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/kontoData/src/environments/environment.ts",
+                  "with": "projects/kontoData/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "kontoData:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "kontoData:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "kontoData:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/kontoData/src/test.ts",
+            "polyfills": "projects/kontoData/src/polyfills.ts",
+            "tsConfig": "projects/kontoData/tsconfig.spec.json",
+            "karmaConfig": "projects/kontoData/karma.conf.js",
+            "assets": [
+              "projects/kontoData/src/favicon.ico",
+              "projects/kontoData/src/assets"
+            ],
+            "styles": [
+              "projects/kontoData/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kontoData/tsconfig.app.json",
+              "projects/kontoData/tsconfig.spec.json",
+              "projects/kontoData/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/kontoData/e2e/protractor.conf.js",
+            "devServerTarget": "kontoData:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "kontoData:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "kontoAdressform": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/kontoAdressform",
+      "sourceRoot": "projects/kontoAdressform/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/kontoAdressform",
+            "index": "projects/kontoAdressform/src/index.html",
+            "main": "projects/kontoAdressform/src/main.ts",
+            "polyfills": "projects/kontoAdressform/src/polyfills.ts",
+            "tsConfig": "projects/kontoAdressform/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/kontoAdressform/src/favicon.ico",
+              "projects/kontoAdressform/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/kontoAdressform/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/rxjs/bundles/rxjs.umd.js",
+              "node_modules/@angular/core/bundles/core.umd.js",
+              "node_modules/@angular/common/bundles/common.umd.js",
+              "node_modules/@angular/common/bundles/common-http.umd.js",
+              "node_modules/@angular/compiler/bundles/compiler.umd.js",
+              "node_modules/@angular/elements/bundles/elements.umd.js",
+              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
+              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/kontoAdressform/src/environments/environment.ts",
+                  "with": "projects/kontoAdressform/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "kontoAdressform:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "kontoAdressform:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "kontoAdressform:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/kontoAdressform/src/test.ts",
+            "polyfills": "projects/kontoAdressform/src/polyfills.ts",
+            "tsConfig": "projects/kontoAdressform/tsconfig.spec.json",
+            "karmaConfig": "projects/kontoAdressform/karma.conf.js",
+            "assets": [
+              "projects/kontoAdressform/src/favicon.ico",
+              "projects/kontoAdressform/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/kontoAdressform/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kontoAdressform/tsconfig.app.json",
+              "projects/kontoAdressform/tsconfig.spec.json",
+              "projects/kontoAdressform/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/kontoAdressform/e2e/protractor.conf.js",
+            "devServerTarget": "kontoAdressform:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "kontoAdressform:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "my-lib": {
+      "projectType": "library",
+      "root": "projects/my-lib",
+      "sourceRoot": "projects/my-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/my-lib/tsconfig.lib.json",
+            "project": "projects/my-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/my-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/my-lib/src/test.ts",
+            "tsConfig": "projects/my-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/my-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/my-lib/tsconfig.lib.json",
+              "projects/my-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "banking-app"

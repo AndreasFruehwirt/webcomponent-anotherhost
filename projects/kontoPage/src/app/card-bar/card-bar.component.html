@@ -1,0 +1,80 @@
+<div class="grid-container">
+  <mat-grid-list cols="4" rowHeight="200px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="profile-card" mat-ripple (click)="navigate('Linz')" [class.mat-elevation-z6]="activatedCard==='Linz'">
+        <mat-card-header>
+          <mat-card-title>
+            Labor
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="profile-card-content">
+          <div>Linz</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="profile-card" mat-ripple (click)="navigate('Wien')" [class.mat-elevation-z6]="activatedCard==='Wien'">
+        <mat-card-header>
+          <mat-card-title>
+            Labor
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="profile-card-content">
+          <div>Wien</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="profile-card" mat-ripple (click)="navigate('Graz')" [class.mat-elevation-z6]="activatedCard==='Graz'">
+        <mat-card-header>
+          <mat-card-title>
+            Labor
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="profile-card-content">
+          <div>Graz</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="profile-card" mat-ripple (click)="navigate('Salzburg')" [class.mat-elevation-z6]="activatedCard==='Salzburg'">
+        <mat-card-header>
+          <mat-card-title>
+            Labor
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="profile-card-content">
+          <div>Salzburg</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
