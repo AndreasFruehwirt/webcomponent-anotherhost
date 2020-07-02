@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:kontopage": "ng serve kontoPage --watch --eval-source-map --plugin ~projects/kontoPage/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoPage/webpack.externals.js  --port=4202",
+    "start:kontopage": "ng serve kontoPage --watch --plugin ~projects/kontoPage/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoPage/webpack.externals.js  --port=4202",
     "start:kontodata": "ng serve kontoData --watch --eval-source-map --plugin ~projects/kontoData/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoData/webpack.externals.js  --port=4203",
     "start:kontoadressform": "ng serve kontoAdressform --watch --eval-source-map --plugin ~projects/kontoAdressform/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoAdressform/webpack.externals.js  --port=4204",
     "build": "ng build",

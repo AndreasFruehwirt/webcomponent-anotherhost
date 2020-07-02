@@ -12,7 +12,10 @@ exports.default = {
     });
 
     return strategy(cfg, {
-      devtool: 'inline-source-map'
+      devtool: "eval-source-maps",
+      output: {
+        devtoolNamespace: "kontoData"
+      }
     });
   },
 
