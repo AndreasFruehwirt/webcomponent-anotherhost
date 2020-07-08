@@ -17,6 +17,22 @@ import { BankpageThreeComponent } from './banknav/bankpage-three/bankpage-three.
 import {LazyElementsModule} from "@angular-extensions/elements";
 import {BehaviorSubject} from "rxjs";
 import { PageLoaderComponent } from './page-loader/page-loader.component';
+import {SwiperModule} from 'ngx-swiper-wrapper';
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import {MatCardModule} from "@angular/material/card";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatRippleModule} from "@angular/material/core";
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  observer: true,
+  direction: 'horizontal',
+  threshold: 50,
+  spaceBetween: 5,
+  slidesPerView: 1,
+  centeredSlides: true
+};
+
 
 @NgModule({
   declarations: [
@@ -37,9 +53,18 @@ import { PageLoaderComponent } from './page-loader/page-loader.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    LazyElementsModule
+    MatCardModule,
+    MatMenuModule,
+    MatRippleModule,
+    MatToolbarModule,
+    MatButtonModule,
+    LazyElementsModule,
+    SwiperModule
   ],
-  providers: [],
+  providers: [ {
+    provide: SWIPER_CONFIG,
+    useValue: DEFAULT_SWIPER_CONFIG
+  }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
