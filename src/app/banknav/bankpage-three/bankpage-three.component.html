@@ -1,1 +1,49 @@
-<p>bankpage-three works!</p>
+<div class="container">
+
+  <div class="vertical-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="50%">
+    <div class="box-title">Swiper</div>
+
+    <div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+      <swiper *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [config]="config" [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+        <div *ngFor="let slide of slides" class="swiper-slide">
+          <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+            {{slide}}
+          </div>
+        </div>
+      </swiper>
+
+      <div *ngIf="type == 'directive' && show" class="swiper-container" [disabled]="disabled" [swiper]="config" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+        <div class="swiper-wrapper">
+          <div *ngFor="let slide of slides" class="swiper-slide">
+            <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+
+              <mat-card class="profile-card" mat-ripple>
+                <mat-card-header>
+                  <mat-card-title>
+                    Labor
+                    <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="before">
+                      <button mat-menu-item>Expand</button>
+                      <button mat-menu-item>Remove</button>
+                    </mat-menu>
+                  </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="profile-card-content">
+                  <div>{{slide}}</div>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div>
+        <div class="swiper-pagination" [hidden]="config.pagination === false"></div>
+
+        <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
+        <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
+      </div>
+    </div>
+  </div>
+</div>
