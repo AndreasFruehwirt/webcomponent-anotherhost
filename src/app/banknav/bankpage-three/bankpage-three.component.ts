@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {
   SwiperComponent,
   SwiperConfigInterface,
@@ -6,28 +6,27 @@ import {
   SwiperPaginationInterface,
   SwiperScrollbarInterface
 } from "ngx-swiper-wrapper";
+import {CardComponentLoaderService} from "./card-component-loader.service";
+import {CardData, CardDataService} from "./card-data.service";
+import {BehaviorSubject} from "rxjs";
+import {filter} from "rxjs/operators";
+import {isDefined} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-bankpage-three',
   templateUrl: './bankpage-three.component.html',
   styleUrls: ['./bankpage-three.component.scss']
 })
-export class BankpageThreeComponent implements OnInit {
+export class BankpageThreeComponent implements OnInit, AfterViewInit {
 
   activatedCard: String;
   public show: boolean = true;
   @ViewChild(SwiperComponent, { static: false }) componentRef?: SwiperComponent;
   @ViewChild(SwiperDirective, { static: false }) directiveRef?: SwiperDirective;
+  @ViewChild('datacontainer', {read: ElementRef}) dataContainer: ElementRef;
 
 
-  public slides = [
-    'First slide',
-    'Second slide',
-    'Third slide',
-    'Fourth slide',
-    'Fifth slide',
-    'Sixth slide'
-  ];
+  public slides:CardData[]  = [];
 
   public config: SwiperConfigInterface = {
     a11y: true,
@@ -40,14 +39,19 @@ export class BankpageThreeComponent implements OnInit {
     pagination: false,
     threshold: 50,
     spaceBetween: 20,
-    centeredSlides: true,
+    centeredSlides: false,
     watchSlidesProgress: true,
-    watchSlidesVisibility: true
+    watchSlidesVisibility: true,
+    slidesOffsetBefore: 20,
+    slidesOffsetAfter: 20,
+    loop: true
   };
 
   public type: string = 'directive';
 
   public disabled: boolean = false;
+
+  private cardData$: BehaviorSubject<CardData>;
 
 
   private scrollbar: SwiperScrollbarInterface = {
@@ -62,9 +66,31 @@ export class BankpageThreeComponent implements OnInit {
     hideOnClick: false
   };
 
-  constructor() { }
+  constructor(private cardComponentLoader: CardComponentLoaderService,
+              private elRef:ElementRef,
+              private cardDataService: CardDataService) {
+    let element = this.elRef.nativeElement;
+    console.log(element);
+  }
 
   ngOnInit(): void {
+    this.cardData$ = this.cardDataService.getCardData();
+    this.cardData$.pipe(
+      filter((data) => isDefined(data))
+    ).subscribe((data)=>{
+      console.log(data)
+      this.addCards(data);
+    });
+  }
+
+  private addCards(card:CardData):void {
+    this.slides.push(card);
+  }
+
+  ngAfterViewInit() {
+
+    console.log(this.dataContainer.nativeElement);
+    this.cardComponentLoader.setDataContainer(this.dataContainer);
   }
 
   navigate(location:string):void {
@@ -130,6 +156,10 @@ export class BankpageThreeComponent implements OnInit {
 
   public onSwiperEvent(event: string): void {
     console.log('Swiper event: ', event);
+  }
+
+  public addCard(): void {
+    //this.slides.push('New card ' + Math.random());
   }
 
 }

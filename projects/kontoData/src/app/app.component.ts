@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {MultipleTestService} from "./multiple-test.service";
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,8 @@ export class AppComponent implements OnInit{
 
   @Input() pagefragmentcontext:any;
 
-  constructor() {
-
+  constructor(private multipleTestService: MultipleTestService) {
+    console.log('got initialized newly ===================>');
   }
 
 

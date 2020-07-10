@@ -23,6 +23,7 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import {MatCardModule} from "@angular/material/card";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatRippleModule} from "@angular/material/core";
+import { CardComponent } from './banknav/bankpage-three/card/card.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -41,7 +42,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BankpageOneComponent,
     BankpageTwoComponent,
     BankpageThreeComponent,
-    PageLoaderComponent
+    PageLoaderComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

@@ -30,19 +30,19 @@ export class PageFragmentLoaderComponent implements OnInit {
       console.log(value);
       value.pageBodyEventHandler.pipe(
         filter(value => isDefined(value))
-      ).subscribe((context:any) => this.handlePageFragmentRouting(context));
+      ).subscribe((context:any) => {this.handlePageFragmentRouting(context,true);this.handlePageFragmentRouting(context, false);});
     });
   }
 
-  handlePageFragmentRouting(context:any) {
+  handlePageFragmentRouting(context:any, twice:boolean) {
     let fragmentContext = new PageFragmentContext(context.url, context.tag);
     const script = document.createElement('script');
     script.defer = true;
     script.src = fragmentContext.url  + "/main.js?ts=" + new Date().getTime();
-    document.body.appendChild(script);
+    twice && document.body.appendChild(script);
     this.frontend = document.createElement(context.tag) as NgElement & WithProperties<{pagefragmentcontext: PageFragmentContext}>;
     this.frontend.pagefragmentcontext = context;
-    this.content.innerHTML='';
+    if (twice) this.content.innerHTML='';
     this.content.appendChild(this.frontend);
   }
 

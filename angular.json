@@ -557,6 +557,266 @@
           }
         }
       }
+    },
+    "zvKontoCard": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/zvKontoCard",
+      "sourceRoot": "projects/zvKontoCard/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/zvKontoCard",
+            "index": "projects/zvKontoCard/src/index.html",
+            "main": "projects/zvKontoCard/src/main.ts",
+            "polyfills": "projects/zvKontoCard/src/polyfills.ts",
+            "tsConfig": "projects/zvKontoCard/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/zvKontoCard/src/favicon.ico",
+              "projects/zvKontoCard/src/assets"
+            ],
+            "styles": [
+              "projects/zvKontoCard/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/rxjs/bundles/rxjs.umd.js",
+              "node_modules/@angular/core/bundles/core.umd.js",
+              "node_modules/@angular/common/bundles/common.umd.js",
+              "node_modules/@angular/common/bundles/common-http.umd.js",
+              "node_modules/@angular/compiler/bundles/compiler.umd.js",
+              "node_modules/@angular/elements/bundles/elements.umd.js",
+              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
+              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/zvKontoCard/src/environments/environment.ts",
+                  "with": "projects/zvKontoCard/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "zvKontoCard:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "zvKontoCard:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "zvKontoCard:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/zvKontoCard/src/test.ts",
+            "polyfills": "projects/zvKontoCard/src/polyfills.ts",
+            "tsConfig": "projects/zvKontoCard/tsconfig.spec.json",
+            "karmaConfig": "projects/zvKontoCard/karma.conf.js",
+            "assets": [
+              "projects/zvKontoCard/src/favicon.ico",
+              "projects/zvKontoCard/src/assets"
+            ],
+            "styles": [
+              "projects/zvKontoCard/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/zvKontoCard/tsconfig.app.json",
+              "projects/zvKontoCard/tsconfig.spec.json",
+              "projects/zvKontoCard/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/zvKontoCard/e2e/protractor.conf.js",
+            "devServerTarget": "zvKontoCard:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "zvKontoCard:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "wpCard": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/wpCard",
+      "sourceRoot": "projects/wpCard/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/wpCard",
+            "index": "projects/wpCard/src/index.html",
+            "main": "projects/wpCard/src/main.ts",
+            "polyfills": "projects/wpCard/src/polyfills.ts",
+            "tsConfig": "projects/wpCard/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/wpCard/src/favicon.ico",
+              "projects/wpCard/src/assets"
+            ],
+            "styles": [
+              "projects/wpCard/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/rxjs/bundles/rxjs.umd.js",
+              "node_modules/@angular/core/bundles/core.umd.js",
+              "node_modules/@angular/common/bundles/common.umd.js",
+              "node_modules/@angular/common/bundles/common-http.umd.js",
+              "node_modules/@angular/compiler/bundles/compiler.umd.js",
+              "node_modules/@angular/elements/bundles/elements.umd.js",
+              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
+              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/wpCard/src/environments/environment.ts",
+                  "with": "projects/wpCard/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "wpCard:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "wpCard:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "wpCard:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/wpCard/src/test.ts",
+            "polyfills": "projects/wpCard/src/polyfills.ts",
+            "tsConfig": "projects/wpCard/tsconfig.spec.json",
+            "karmaConfig": "projects/wpCard/karma.conf.js",
+            "assets": [
+              "projects/wpCard/src/favicon.ico",
+              "projects/wpCard/src/assets"
+            ],
+            "styles": [
+              "projects/wpCard/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wpCard/tsconfig.app.json",
+              "projects/wpCard/tsconfig.spec.json",
+              "projects/wpCard/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/wpCard/e2e/protractor.conf.js",
+            "devServerTarget": "wpCard:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "wpCard:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "banking-app"

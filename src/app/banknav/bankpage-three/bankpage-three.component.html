@@ -1,12 +1,23 @@
+<div #datacontainer id="dataContainer">
+
+</div>
 <div class="container">
 
-  <div class="vertical-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="50%">
+  <div class="vertical-container" >
     <div class="box-title">Swiper</div>
+    <div class="example-button-row">
+      <button mat-button (click)="addCard()">Add Card</button>
+      <button mat-button color="primary">Primary</button>
+      <button mat-button color="accent">Accent</button>
+      <button mat-button color="warn">Warn</button>
+      <button mat-button disabled>Disabled</button>
+      <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+    </div>
 
-    <div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
-      <swiper *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [config]="config" [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+    <div class="content-container">
+      <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config" [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
         <div *ngFor="let slide of slides" class="swiper-slide">
-          <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+          <div>
             {{slide}}
           </div>
         </div>
@@ -15,7 +26,8 @@
       <div *ngIf="type == 'directive' && show" class="swiper-container" [disabled]="disabled" [swiper]="config" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
         <div class="swiper-wrapper">
           <div *ngFor="let slide of slides" class="swiper-slide">
-            <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+            <app-card [card]="slide"></app-card>
+            <!--<div>
 
               <mat-card class="profile-card" mat-ripple>
                 <mat-card-header>
@@ -34,7 +46,7 @@
                   <div>{{slide}}</div>
                 </mat-card-content>
               </mat-card>
-            </div>
+            </div>-->
           </div>
         </div>
 

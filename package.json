@@ -7,6 +7,8 @@
     "start:kontopage": "ng serve kontoPage --watch --plugin ~projects/kontoPage/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoPage/webpack.externals.js  --port=4202",
     "start:kontodata": "ng serve kontoData --watch --eval-source-map --plugin ~projects/kontoData/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoData/webpack.externals.js  --port=4203",
     "start:kontoadressform": "ng serve kontoAdressform --watch --eval-source-map --plugin ~projects/kontoAdressform/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/kontoAdressform/webpack.externals.js  --port=4204",
+    "start:wpcard": "ng serve wpCard --watch --eval-source-map --plugin ~projects/wpCard/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/wpCard/webpack.externals.js  --port=4205",
+    "start:zvkontocard": "ng serve zvKontoCard --watch --eval-source-map --plugin ~projects/zvKontoCard/build-customization-plugin.js --output-hashing none --single-bundle true --extra-webpack-config projects/zvKontoCard/webpack.externals.js  --port=4206",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -15,7 +17,9 @@
     "postinstall": "ngcc",
     "build:kontoPage:externals": "ng build --extra-webpack-config projects/kontoPage/webpack.externals.js --prod --project kontoPage --single-bundle",
     "build:kontoData:externals": "ng build --extra-webpack-config projects/kontoData/webpack.externals.js --prod --project kontoData --single-bundle",
-    "build:kontoAdressform:externals": "ng build --extra-webpack-config projects/kontoAdressform/webpack.externals.js --prod --project kontoAdressform --single-bundle"
+    "build:kontoAdressform:externals": "ng build --extra-webpack-config projects/kontoAdressform/webpack.externals.js --prod --project kontoAdressform --single-bundle",
+    "build:wpCard:externals": "ng build --extra-webpack-config projects/wpCard/webpack.externals.js --prod --project wpCard --single-bundle",
+    "build:zvKontoCard:externals": "ng build --extra-webpack-config projects/zvKontoCard/webpack.externals.js --prod --project zvKontoCard --single-bundle"
   },
   "private": true,
   "dependencies": {

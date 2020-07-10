@@ -6,6 +6,16 @@
   font-size: 24px;
 }
 
+
+.example-button-row {
+  display: table-cell;
+}
+
+.example-button-row button {
+  display: table-cell;
+  margin-right: 8px;
+}
+
 .box-title {
   font-size: 20px;
 }
