@@ -154,14 +154,7 @@
               "projects/kontoPage/src/styles.scss"
             ],
             "scripts": [
-              "node_modules/rxjs/bundles/rxjs.umd.js",
-              "node_modules/@angular/core/bundles/core.umd.js",
-              "node_modules/@angular/common/bundles/common.umd.js",
-              "node_modules/@angular/common/bundles/common-http.umd.js",
-              "node_modules/@angular/compiler/bundles/compiler.umd.js",
-              "node_modules/@angular/elements/bundles/elements.umd.js",
-              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
-              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+
             ]
           },
           "configurations": {
@@ -284,14 +277,7 @@
               "projects/kontoData/src/styles.scss"
             ],
             "scripts": [
-              "node_modules/rxjs/bundles/rxjs.umd.js",
-              "node_modules/@angular/core/bundles/core.umd.js",
-              "node_modules/@angular/common/bundles/common.umd.js",
-              "node_modules/@angular/common/bundles/common-http.umd.js",
-              "node_modules/@angular/compiler/bundles/compiler.umd.js",
-              "node_modules/@angular/elements/bundles/elements.umd.js",
-              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
-              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+
             ]
           },
           "configurations": {
@@ -415,14 +401,7 @@
               "projects/kontoAdressform/src/styles.scss"
             ],
             "scripts": [
-              "node_modules/rxjs/bundles/rxjs.umd.js",
-              "node_modules/@angular/core/bundles/core.umd.js",
-              "node_modules/@angular/common/bundles/common.umd.js",
-              "node_modules/@angular/common/bundles/common-http.umd.js",
-              "node_modules/@angular/compiler/bundles/compiler.umd.js",
-              "node_modules/@angular/elements/bundles/elements.umd.js",
-              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
-              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+
             ]
           },
           "configurations": {
@@ -586,14 +565,7 @@
               "projects/zvKontoCard/src/styles.scss"
             ],
             "scripts": [
-              "node_modules/rxjs/bundles/rxjs.umd.js",
-              "node_modules/@angular/core/bundles/core.umd.js",
-              "node_modules/@angular/common/bundles/common.umd.js",
-              "node_modules/@angular/common/bundles/common-http.umd.js",
-              "node_modules/@angular/compiler/bundles/compiler.umd.js",
-              "node_modules/@angular/elements/bundles/elements.umd.js",
-              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
-              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+
             ]
           },
           "configurations": {
@@ -716,14 +688,7 @@
               "projects/wpCard/src/styles.scss"
             ],
             "scripts": [
-              "node_modules/rxjs/bundles/rxjs.umd.js",
-              "node_modules/@angular/core/bundles/core.umd.js",
-              "node_modules/@angular/common/bundles/common.umd.js",
-              "node_modules/@angular/common/bundles/common-http.umd.js",
-              "node_modules/@angular/compiler/bundles/compiler.umd.js",
-              "node_modules/@angular/elements/bundles/elements.umd.js",
-              "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
-              "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"
+
             ]
           },
           "configurations": {
